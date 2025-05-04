@@ -1,5 +1,6 @@
 package it.epicode.u17_d5_eventi_epici.auth;
 
+import it.epicode.u17_d5_eventi_epici.eventi.Evento;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.ApplicationArguments;
 import org.springframework.boot.ApplicationRunner;
@@ -33,11 +34,9 @@ public class AuthRunner implements ApplicationRunner {
         }
 
         // Creazione dell'utente seller se non esiste
-        Optional<AppUser> normalSeller = appUserService.findByUsername("seller");
+        Optional<AppUser> normalEventManager = appUserService.findByUsername("event_manager");
         if (normalUser.isEmpty()) {
-            appUserService.registerUser("seller", "sellerpwd", Set.of(Role.ROLE_SELLER));
+            appUserService.registerUser("event_manager", "event_managerpwd", Set.of(Role.ROLE_EVENT_MANAGER));
         }
-
-
     }
 }
