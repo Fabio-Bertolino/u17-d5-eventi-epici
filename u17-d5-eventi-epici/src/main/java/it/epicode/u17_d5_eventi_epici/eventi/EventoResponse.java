@@ -1,9 +1,11 @@
 package it.epicode.u17_d5_eventi_epici.eventi;
 
 import it.epicode.u17_d5_eventi_epici.auth.AppUser;
+import lombok.Data;
 
 import java.time.LocalDate;
 
+@Data
 public class EventoResponse {
     private Long id;
     private String titolo;
